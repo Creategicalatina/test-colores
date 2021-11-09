@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 class PerfilPersonalidadController extends Controller
 {
     public function index(){
-        $preguntas = Group::select('id')
-        ->with('characteristics:id,name,description')
-        ->orderBy('order')
-        ->get();
+        $preguntas = Group::selectRaw('id, 0 as selected')
+            ->with('characteristics:id,name,description')
+            ->orderBy('order')
+            ->get();
         return response()->json($preguntas);
     }
 }
