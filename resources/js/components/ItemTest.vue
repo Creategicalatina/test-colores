@@ -14,7 +14,7 @@ export default {
     },
     selected: {
       type: Number,
-      require: true,
+      required: true,
     },
   },
   computed: {

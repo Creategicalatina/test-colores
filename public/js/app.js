@@ -2080,7 +2080,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     selected: {
       type: Number,
-      require: true
+      required: true
     }
   },
   computed: {
