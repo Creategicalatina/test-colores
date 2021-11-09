@@ -2128,27 +2128,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2245,16 +2224,6 @@ __webpack_require__.r(__webpack_exports__);
     console.log('matriz: ', this.matriz);
   },
   created: function created() {
-    /*this.sanguineo = [ 
-        'Animado', 'Juguetón', 'Sociable', 'Convincente', 'Entusiasta',
-        'Enérgico', 'Activista', 'Espontaneo', 'Optimista', 'Chistoso',
-        'Encantador', 'Alegre', 'Inspirador', 'Calido', 'Cordial', 
-        'Hablador', 'Vivaz', 'Listo',  'Popular', 'Jovial',
-        'Estridente', 'Indisciplinado', 'Repetidor', 'Olvidadizo', 'Interrumpe',
-        'Imprevisible', 'Descuidado', 'Tolerante', 'Iracundo', 'Ingenuo',
-        'Egocentrico', 'Hablador', 'Desorganizado', 'Inconsistente', 'Desordenado',
-        'Ostentoso', 'Emocional', 'Atolondrado', 'Inquieto', 'Variable'
-    ];*/
     this.matriz = [[{
       type: 'sanguineo',
       value: 'Animado'
@@ -2400,70 +2369,8 @@ __webpack_require__.r(__webpack_exports__);
       type: 'colerico',
       value: 'Confiado'
     }]];
-    /*
-      ['Idealista', 'Independiente', 'Inofensivo', 'Inspirador'],
-      ['Calido', 'Decisivo', 'Humor seco', 'Introspectivo'],
-      ['Conciliador', 'Músico', 'Instigador', 'Cordial'],
-      ['Considerado', 'Tenaz', 'Hablador', 'Tolerante'],
-      ['Escucha', 'Leal', 'Lider', 'Vivaz'],
-      ['Contento', 'Jefe', 'Organizado', 'Listo'],
-      ['Perfeccionista', 'Tolerante', 'Productivo', 'Popular'],
-      ['Jovial', 'Atrevido', 'Se comporta bien', 'Equilibrado'],
-      ['Estridente', 'Mandón', 'Apocado', 'Soso'],
-      ['Indisciplinado', 'Antipático', 'Sin entusiasmo', 'Implacable'],
-      ['Reticente', 'Resentido', 'Resistente', 'Repetidor'],
-      ['Exigente', 'Temeroso', 'Olvidadizo', 'Franco'],
-      ['Impaciente', 'Inseguro', 'Indeciso', 'Interrumpe'],
-      ['Impopular', 'No comprometido', 'Imprevisible', 'Frío'],
-      ['Terco', 'Descuidado', 'Dificil contentar', 'Vacilante'],
-      ['Insípido', 'Pesimista', 'Orgulloso', 'Tolerante'],
-      ['Iracundo', 'Sin motivación', 'Argumentador', 'Taciturno'],
-      ['Ingenuo', 'Negativo', 'Nervioso', 'Desprendido'],
-      ['Ansioso', 'Abstraído', 'Adicto al trabajo', 'Egocentrico'],
-      ['Susceptible', 'Indiscreto', 'Tímido', 'Hablador'],
-      ['Dudoso', 'Desorganizado', 'Dominante', 'Deprimido'],
-      ['Inconsistente', 'Introvertido', 'Intolerante', 'Indiferente'],
-      ['Desordenado', 'Moroso', 'Quejumbroso', 'Manipulador'],
-      ['Lento', 'Testarudo', 'Ostentoso', 'Esceptico'],
-      ['Solitario', 'Prepotente', 'Perezoso', 'Emocional'],
-      ['Sin ambición', 'Suspicaz', 'Malgeniado', 'Atolondrado'],
-      ['Vengativo', 'Inquieto', 'Poca Voluntad', 'Precipitado'],
-      ['Comprometido', 'Crítico', 'Astuto', 'Variable']
-    ];*/
   }
 });
-/*let colerico = [
-    'Aventurero', 'Persuasivo', 'Decidido', 'Competitivo', 'Inventivo',
-    'Autosuficiente', 'Positivo', 'Seguro', 'Abierto', 'Dominante',
-    'Osado', 'Confiado', 'Independiente', 'Decisivo', 'Instigador',
-    'Tenaz', 'Lider', 'Jefe', 'Productivo', 'Atrevido',
-    'Mandón', 'Antipático', 'Resistente', 'Franco', 'Impaciente',
-    'Frío', 'Terco', 'Orgulloso', 'Argumentador', 'Nervioso',
-    'Adicto al trabajo', 'Indiscreto', 'Dominante', 'Intolerante', 'Manipulador',
-    'Testarudo', 'Prepotente', 'Malgeniado', 'Precipitado', 'Astuto'
-];
-
-let melancolico = [
-    'Analítico', 'Persistente', 'Abnegado', 'Considerado', 'Respetuoso',
-    'Sensible', 'Planificador', 'Puntual', 'Ordenado', 'Fiel',
-    'Detallista', 'Culto', 'Idealista', 'Introspectivo', 'Músico',
-    'Considerado', 'Leal', 'Organizado', 'Perfeccionista', 'Se comporta bien',
-    'Apocado', 'Sin entusiasmo', 'Resentido', 'Exigente', 'Inseguro',
-    'No comprometido', 'Dificil contentar', 'Pesimista', 'Sin motivación', 'Negativo',
-    'Abstraído', 'Susceptible', 'Deprimido', 'Introvertido', 'Moroso',
-    'Esceptico', 'Solitario', 'Suspicaz', 'Vengativo', 'Comprometido'
-];
-
-let flematico = [
-    'Adaptable', 'Plácido', 'Sumiso', 'Controlado', 'Reservado',
-    'Contento', 'Paciente', 'Timido', 'Atento', 'Amigable',
-    'Diplomático', 'Constante', 'Inofensivo', 'Humor seco', 'Conciliador',
-    'Tolerante', 'Escucha', 'Contento', 'Tolerante', 'Equilibrado',
-    'Soso', 'Implacable', 'Reticente', 'Temeroso', 'Indeciso',
-    'Impopular', 'Vacilante', 'Insípido', 'Taciturno', 'Desprendido',
-    'Ansioso', 'Tímido', 'Dudoso', 'Indiferente', 'Quejumbroso',
-    'Lento', 'Perezoso', 'Sin ambición', 'Poca Voluntad', 'Crítico'
-];*/
 
 /***/ }),
 
@@ -38568,118 +38475,76 @@ var render = function() {
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-header" }, [
-            _vm._v("Example Component")
-          ]),
-          _vm._v(" "),
           _c(
             "div",
             { staticClass: "card-body" },
-            [
-              _vm._l(_vm.matriz, function(item, index) {
-                return _c("div", { key: index, staticClass: "main-content" }, [
+            _vm._l(_vm.matriz, function(item, index) {
+              return _c("div", { key: index, staticClass: "main-content" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-info",
+                    staticStyle: { background: "#3490dc3d" }
+                  },
+                  [_vm._v(" " + _vm._s(index + 1) + " ")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group second-content" }, [
                   _c(
                     "div",
                     {
-                      staticClass: "col-info",
-                      staticStyle: { background: "#3490dc3d" }
+                      staticClass: "btn-group btn-group-toggle",
+                      staticStyle: { width: "100%" },
+                      attrs: { "data-toggle": "buttons" }
                     },
-                    [_vm._v(" " + _vm._s(index + 1) + " ")]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group second-content" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "btn-group btn-group-toggle",
-                        staticStyle: { width: "100%" },
-                        attrs: { "data-toggle": "buttons" }
-                      },
-                      _vm._l(item, function(subItem, i) {
-                        return _c(
-                          "label",
-                          {
-                            key: i,
-                            staticClass:
-                              "btn btn-outline-secondary rounded my-2 mx-3 p-1"
-                          },
-                          [
-                            _c("input", {
-                              attrs: {
-                                type: "radio",
-                                name: "btnradio" + index,
-                                id: subItem.value,
-                                required: ""
-                              },
-                              domProps: { value: subItem.value },
-                              on: {
-                                change: function($event) {
-                                  return _vm.onchange(subItem, index, i)
-                                }
+                    _vm._l(item, function(subItem, i) {
+                      return _c(
+                        "label",
+                        {
+                          key: i,
+                          staticClass:
+                            "btn btn-outline-secondary rounded my-2 mx-3 p-1"
+                        },
+                        [
+                          _c("input", {
+                            attrs: {
+                              type: "radio",
+                              name: "btnradio" + index,
+                              id: subItem.value,
+                              required: ""
+                            },
+                            domProps: { value: subItem.value },
+                            on: {
+                              change: function($event) {
+                                return _vm.onchange(subItem, index, i)
                               }
-                            }),
-                            _vm._v(" "),
-                            _c("span", [_vm._v(_vm._s(subItem.value))])
-                          ]
-                        )
-                      }),
-                      0
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "col-info",
-                      class:
-                        index === _vm.getFila(index) ? "col-green" : "col-red"
-                    },
-                    [
-                      _vm._v(
-                        "  " +
-                          _vm._s(index === _vm.getFila(index) ? 1 : 0) +
-                          " "
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", [_vm._v(_vm._s(subItem.value))])
+                        ]
                       )
-                    ]
+                    }),
+                    0
                   )
-                ])
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "row mt-5" }, [
-                _c("div", { staticClass: "col-3 text-center" }, [
-                  _c("div", { staticClass: "red style-text" }, [
-                    _vm._v("ROJO")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [_vm._v(_vm._s(_vm.getValueSanguineo()))])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-3 text-center" }, [
-                  _c("div", { staticClass: "yellow style-text" }, [
-                    _vm._v("AMARILLO")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [_vm._v(_vm._s(_vm.getValueColerico()))])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-3 text-center" }, [
-                  _c("div", { staticClass: "green style-text" }, [
-                    _vm._v("VERDE")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [_vm._v(_vm._s(_vm.getValueMelancolico()))])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-3 text-center" }, [
-                  _c("div", { staticClass: "blue style-text" }, [
-                    _vm._v("AZUL")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [_vm._v(_vm._s(_vm.getValueFlematico()))])
-                ])
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-info",
+                    class:
+                      index === _vm.getFila(index) ? "col-green" : "col-red"
+                  },
+                  [
+                    _vm._v(
+                      "  " + _vm._s(index === _vm.getFila(index) ? 1 : 0) + " "
+                    )
+                  ]
+                )
               ])
-            ],
-            2
+            }),
+            0
           )
         ])
       ])
