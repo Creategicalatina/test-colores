@@ -15,4 +15,6 @@ class Characteristic extends Model
     const FLEMATICO = 'FLEMATICO';
 
     public $timestamps = false;
+
+    protected $hidden = ['pivot'];
 }
