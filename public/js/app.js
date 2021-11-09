@@ -2153,14 +2153,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      matriz: [],
-      matrizResult: []
+      matriz: []
     };
   },
   components: {
@@ -2176,7 +2173,6 @@ __webpack_require__.r(__webpack_exports__);
 
     this.axios.get("/api/get-questions").then(function (response) {
       _this.matriz = response.data;
-      console.log(_this.matriz);
     });
   }
 });
@@ -2214,7 +2210,8 @@ vue__WEBPACK_IMPORTED_MODULE_1__["default"].prototype.axios = (axios__WEBPACK_IM
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-vue__WEBPACK_IMPORTED_MODULE_1__["default"].component('view-test', __webpack_require__(/*! ./view/ViewTest.vue */ "./resources/js/view/ViewTest.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_1__["default"].component('view-test', __webpack_require__(/*! ./view/ViewTest.vue */ "./resources/js/view/ViewTest.vue")["default"]); // Vue.component('view-test', require('./view/ViewTestBase.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -2277,7 +2274,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.main-content[data-v-096c45a0] {\n  display: flex;\n  border: 1px solid #0404047a;\n  padding: 5px 0 0;\n}\n.second-content[data-v-096c45a0] {\n  width: 80%;\n  margin-bottom: 5px;\n}\n.col-info[data-v-096c45a0] {\n  width: 10%;\n  text-align: center;\n  padding-top: 16px;\n  margin-top: -5px;\n  font-size: 1rem;\n}\n.col-red[data-v-096c45a0] {\n  background: #f500007a;\n}\n.col-green[data-v-096c45a0] {\n  background: #38c1729c;\n}\n.col-item[data-v-096c45a0] {\n  width: 25%;\n  border-top: 0;\n  border-bottom: 0;\n  border-left: 1px solid #0404047a;\n  border-right: 1px solid #0404047a;\n  padding: 10px 0 0 10px;\n  margin-top: -10px;\n}\n.red[data-v-096c45a0] {\n  background: red;\n}\n.yellow[data-v-096c45a0] {\n  background: yellow;\n}\n.green[data-v-096c45a0] {\n  background: green;\n}\n.blue[data-v-096c45a0] {\n  background: blue;\n}\n.style-text[data-v-096c45a0] {\n  font-size: 1rem;\n  font-weight: bold;\n  padding: 2px 0;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.btn[data-v-096c45a0] {\n  width: 80%;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2301,7 +2298,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.main-content[data-v-b1de01da] {\n  display: flex;\n  border: 1px solid #0404047a;\n  padding: 5px 0 0;\n}\n.second-content[data-v-b1de01da] {\n  width: 80%;\n  margin-bottom: 5px;\n}\n.col-info[data-v-b1de01da] {\n  width: 10%;\n  text-align: center;\n  padding-top: 16px;\n  margin-top: -5px;\n  font-size: 1rem;\n}\n.col-red[data-v-b1de01da] {\n  background: #f500007a;\n}\n.col-green[data-v-b1de01da] {\n  background: #38c1729c;\n}\n.col-item[data-v-b1de01da] {\n  width: 25%;\n  border-top: 0;\n  border-bottom: 0;\n  border-left: 1px solid #0404047a;\n  border-right: 1px solid #0404047a;\n  padding: 10px 0 0 10px;\n  margin-top: -10px;\n}\n.red[data-v-b1de01da] {\n  background: red;\n}\n.yellow[data-v-b1de01da] {\n  background: yellow;\n}\n.green[data-v-b1de01da] {\n  background: green;\n}\n.blue[data-v-b1de01da] {\n  background: blue;\n}\n.style-text[data-v-b1de01da] {\n  font-size: 1rem;\n  font-weight: bold;\n  padding: 2px 0;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.main-content[data-v-b1de01da] {\n  border: 1px solid #0404047a;\n  padding: 5px 0 0;\n}\n.second-content[data-v-b1de01da] {\n  width: 80%;\n  margin-bottom: 5px;\n}\n.col-info[data-v-b1de01da] {\n  width: 10%;\n  text-align: center;\n  font-size: 1rem;\n}\n.col-red[data-v-b1de01da] {\n  background: #f500007a;\n}\n.col-green[data-v-b1de01da] {\n  background: #38c1729c;\n}\n.style-text[data-v-b1de01da] {\n  font-size: 1rem;\n  font-weight: bold;\n  padding: 2px 0;\n}\n.characteristic[data-v-b1de01da]{\n  text-align: center;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -33858,7 +33855,7 @@ var render = function() {
   return _c(
     "label",
     {
-      staticClass: "btn btn-outline-secondary rounded my-2 mx-3 p-1",
+      staticClass: "btn btn-outline-secondary rounded my-2 p-1",
       class: { active: _vm.isActive },
       on: { click: _vm.click }
     },
@@ -33892,68 +33889,79 @@ var render = function() {
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "card" }, [
-          _c(
-            "div",
-            { staticClass: "card-body" },
-            _vm._l(_vm.matriz, function(item, index) {
-              return _c("div", { key: item.id, staticClass: "main-content" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "col-info",
-                    staticStyle: { background: "#3490dc3d" }
-                  },
-                  [
-                    _vm._v(
-                      "\n              " + _vm._s(index + 1) + "\n            "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group second-content" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "btn-group btn-group-toggle",
-                      staticStyle: { width: "100%" },
-                      attrs: { "data-toggle": "buttons" }
-                    },
-                    _vm._l(item.characteristics, function(characteristic) {
-                      return _c("item-test", {
-                        key: characteristic.id,
-                        attrs: {
-                          characteristic: characteristic,
-                          selected: item.selected
+          _c("div", { staticClass: "card-body" }, [
+            _c("table", { staticClass: "w-100" }, [
+              _c(
+                "tbody",
+                _vm._l(_vm.matriz, function(item, index) {
+                  return _c(
+                    "tr",
+                    { key: item.id, staticClass: "main-content" },
+                    [
+                      _c(
+                        "td",
+                        {
+                          staticClass: "col-info",
+                          staticStyle: { background: "#3490dc3d" }
                         },
-                        on: {
-                          click: function($event) {
-                            return _vm.changeSelected(index, characteristic.id)
-                          }
-                        }
-                      })
-                    }),
-                    1
+                        [
+                          _vm._v(
+                            "\n                  " +
+                              _vm._s(index + 1) +
+                              "\n                "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _vm._l(item.characteristics, function(characteristic) {
+                        return _c(
+                          "td",
+                          {
+                            key: characteristic.id,
+                            staticClass: "characteristic"
+                          },
+                          [
+                            _c("item-test", {
+                              attrs: {
+                                characteristic: characteristic,
+                                selected: item.selected
+                              },
+                              on: {
+                                click: function($event) {
+                                  return _vm.changeSelected(
+                                    index,
+                                    characteristic.id
+                                  )
+                                }
+                              }
+                            })
+                          ],
+                          1
+                        )
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "td",
+                        {
+                          staticClass: "col-info",
+                          class: item.selected ? "col-green" : "col-red"
+                        },
+                        [
+                          _vm._v(
+                            "\n                  " +
+                              _vm._s(item.selected ? 1 : 0) +
+                              "\n                "
+                          )
+                        ]
+                      )
+                    ],
+                    2
                   )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "col-info",
-                    class: item.selected ? "col-green" : "col-red"
-                  },
-                  [
-                    _vm._v(
-                      "\n              " +
-                        _vm._s(item.selected ? 1 : 0) +
-                        "\n            "
-                    )
-                  ]
-                )
-              ])
-            }),
-            0
-          )
+                }),
+                0
+              )
+            ])
+          ])
         ])
       ])
     ])

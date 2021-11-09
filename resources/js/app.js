@@ -21,6 +21,7 @@ Vue.prototype.axios = axios;
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 Vue.component('view-test', require('./view/ViewTest.vue').default);
+// Vue.component('view-test', require('./view/ViewTestBase.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
