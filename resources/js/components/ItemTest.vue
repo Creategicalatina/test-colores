@@ -7,6 +7,7 @@
 
 <script>
 export default {
+  name: 'ItemTest',
   props: {
     characteristic: {
       type: Object,

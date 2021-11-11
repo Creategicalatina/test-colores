@@ -47,7 +47,7 @@
               </div>
             </div>
 
-            <div class="row mt-5">
+            <div class="row mt-5" v-if="false">
               <div class="col-3 text-center">
                 <div class="red style-text">ROJO</div>
                 <div>{{ getValueSanguineo() }}</div>

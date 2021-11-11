@@ -17,4 +17,8 @@ class Characteristic extends Model
     public $timestamps = false;
 
     protected $hidden = ['pivot'];
+
+    public function answerTest(){
+        return $this->hasMany(AnswerTest::class, 'characteristic_id');
+    }
 }

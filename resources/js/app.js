@@ -5,10 +5,16 @@
  */
 
 import axios from 'axios';
+import CxltToastr from 'cxlt-vue2-toastr';
 import Vue from 'vue';
 
 require('./bootstrap');
 
+const toastrConfigs = {
+    position: 'top right',
+    showDuration: 2000
+}
+Vue.use(CxltToastr, toastrConfigs)
 
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 Vue.prototype.axios = axios;
@@ -21,6 +27,7 @@ Vue.prototype.axios = axios;
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 Vue.component('view-test', require('./view/ViewTest.vue').default);
+Vue.component('resultados-test', require('./view/ResultadosTest.vue').default);
 // Vue.component('view-test', require('./view/ViewTestBase.vue').default);
 
 /**

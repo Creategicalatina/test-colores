@@ -2,7 +2,16 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-12">
-        <div class="card">
+
+        <rules-test class="rules mb-3"></rules-test>
+
+        <div class="card mb-3 formulario">
+          <div class="card-body">
+            <frm-persona @changeUser="initTest"></frm-persona>
+          </div>
+        </div>
+
+        <div class="card" v-if="showTest">
           <div class="card-body">
             <table class="w-100">
               <tbody>
@@ -34,6 +43,9 @@
                 </tr>
               </tbody>
             </table>
+            <div class="text-center p-2">
+              <button class="btn btn-primary" @click="storeData">Mostrar Resultados</button>
+            </div>
           </div>
         </div>
       </div>
@@ -43,20 +55,83 @@
 
 
 <script>
+import FrmPersona from "../components/FrmPersona.vue";
 import ItemTest from "../components/ItemTest.vue";
+import RulesTest from '../components/RulesTest.vue';
 
 export default {
+  name: "ViewTest",
   data() {
     return {
       matriz: [],
+      showTest: false,
+      user: {},
     };
   },
   components: {
     ItemTest,
+    FrmPersona,
+    RulesTest,
+  },
+  computed: {
+    hasErrorsTest() {
+      if (this.matriz && !this.matriz[this.matriz.length - 1].selected) {
+        return true;
+      }
+      return this.matriz.find((element) => !element.selected) ? true : false;
+    },
   },
   methods: {
     changeSelected(index, value) {
       this.matriz[index].selected = value;
+    },
+    initTest(user) {
+      this.showTest = true;
+      Object.assign(this.user, user);
+    },
+    storeData() {
+      if (this.hasErrorsTest) {
+        this.$toast.error({
+          message: "Aún faltan preguntas por responder",
+          showDuration: 1000,
+          hideDuration: 8000,
+        });
+        document
+          .querySelector(".col-info.col-red")
+          .scrollIntoView({ block: "center", behavior: "smooth" });
+      } else {
+        const data = {
+          email: this.user.email,
+          name: this.user.name,
+          respuestas: [],
+        };
+        window.localStorage.setItem("email", data.email);
+        data.respuestas = this.matriz.map((item) => {
+          return item.selected;
+        });
+
+        this.axios
+          .post("/api/store-questions", data)
+          .then((response) => {
+            if (response.data.url) {
+              window.location.href = response.data.url;
+            } else {
+              this.$toast.error({
+                message: "Error al procesar las respuestas",
+                showDuration: 1000,
+                hideDuration: 8000,
+              });
+            }
+          })
+          .catch((err) => {
+            this.$toast.error({
+              message: "Error al procesar las respuestas",
+              showDuration: 1000,
+              hideDuration: 8000,
+            });
+            console.log(err);
+          });
+      }
     },
   },
   created() {
@@ -96,8 +171,14 @@ export default {
   padding: 2px 0;
 }
 
-.characteristic{
+.characteristic {
   text-align: center;
+}
+
+.formulario,
+.rules {
+  margin: auto;
+  max-width: 50rem;
 }
 
 </style>
