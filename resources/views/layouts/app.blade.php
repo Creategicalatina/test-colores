@@ -30,6 +30,8 @@
             z-index: -1;
             background-size: cover;
             background-image: url('{{ asset('images/bg.jpg') }}');
+            /* background-size: cover;
+            background-image: url('{{ asset('images/bg_horizontal.jpg') }}'); */
 
             /* background-size: cover;
             background-image: url('{{ asset('images/bg_vertical.jpg') }}'); */
@@ -91,7 +93,7 @@
                 </div>
             </div>
         </nav>
-        <main class="py-4">
+        <main class="py-2">
             @yield('content')
         </main>
     </div>

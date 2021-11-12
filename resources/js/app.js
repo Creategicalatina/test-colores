@@ -6,13 +6,14 @@
 
 import axios from 'axios';
 import { Chart, registerables } from 'chart.js';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 import CxltToastr from 'cxlt-vue2-toastr';
 import Vue from 'vue';
 
 require('./bootstrap');
 
 
-Chart.register(...registerables)
+Chart.register(ChartDataLabels, ...registerables)
 Vue.prototype.$chart = Chart;
 
 const toastrConfigs = {

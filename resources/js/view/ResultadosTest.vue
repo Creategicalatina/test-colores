@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-12">
+      <div class="col-md-12 respuestas__container">
         <table class="table table--results">
           <thead>
             <tr>
@@ -21,7 +21,7 @@
           </tbody>
         </table>
       </div>
-      <div class="container_graphic">
+      <div class="container_graphic col-md-6">
         <chart-js :config="getConfigChart"></chart-js>
       </div>
     </div>
@@ -70,6 +70,15 @@ export default {
         options: {
           responsive: true,
           plugins: {
+            datalabels: {
+              color: "#FFFFFF",
+              font: {
+                size: 20,
+              },
+              formatter: function (value) {
+                return value + "%";
+              },
+            },
             legend: {
               position: "bottom",
             },
