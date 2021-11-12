@@ -21,6 +21,9 @@
           </tbody>
         </table>
       </div>
+      <div class="container_graphic">
+        <chart-js :config="getConfigChart"></chart-js>
+      </div>
     </div>
   </div>
 </template>
@@ -47,26 +50,58 @@ export default {
       require: true,
     },
   },
+  computed: {
+    getDataChart() {
+      return {
+        labels: ["Rojo", "Amarillo", "Verde", "Azul"],
+        datasets: [
+          {
+            label: "Test de personalidad",
+            data: [this.red, this.yellow, this.green, this.blue],
+            backgroundColor: ["#e3342f", "#ffed4a", "#38c172", "#3490dc"],
+          },
+        ],
+      };
+    },
+    getConfigChart() {
+      return {
+        type: "pie",
+        data: this.getDataChart,
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: "bottom",
+            },
+            title: {
+              display: false,
+              text: "Chart.js Pie Chart",
+            },
+          },
+        },
+      };
+    },
+  },
 };
 </script>
 
 <style scoped>
-.table--results{
+.table--results {
   background-color: white;
 }
 
 .table--results td,
-.table--results th{
+.table--results th {
   text-align: center;
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
 
-.table--results th{
+.table--results th {
   font-weight: 600;
 }
 
-.table--results td{
+.table--results td {
   border-left: 2px solid #dee2e6;
   border-right: 2px solid #dee2e6;
   border-bottom: 2px solid #dee2e6;

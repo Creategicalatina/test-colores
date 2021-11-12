@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row justify-content-center">
-      <div class="col-md-12">
+      <div class="col-12 col-md-10">
 
         <rules-test class="rules mb-3"></rules-test>
 
@@ -88,6 +88,14 @@ export default {
     initTest(user) {
       this.showTest = true;
       Object.assign(this.user, user);
+      setTimeout(() => {
+        this.scroll();
+      }, 300)
+    },
+    scroll(){
+      document
+          .querySelector(".col-info.col-red")
+          .scrollIntoView({ block: "center", behavior: "smooth" });
     },
     storeData() {
       if (this.hasErrorsTest) {
@@ -96,9 +104,7 @@ export default {
           showDuration: 1000,
           hideDuration: 8000,
         });
-        document
-          .querySelector(".col-info.col-red")
-          .scrollIntoView({ block: "center", behavior: "smooth" });
+        this.scroll();
       } else {
         const data = {
           email: this.user.email,

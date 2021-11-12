@@ -5,10 +5,15 @@
  */
 
 import axios from 'axios';
+import { Chart, registerables } from 'chart.js';
 import CxltToastr from 'cxlt-vue2-toastr';
 import Vue from 'vue';
 
 require('./bootstrap');
+
+
+Chart.register(...registerables)
+Vue.prototype.$chart = Chart;
 
 const toastrConfigs = {
     position: 'top right',
@@ -28,6 +33,7 @@ Vue.prototype.axios = axios;
  */
 Vue.component('view-test', require('./view/ViewTest.vue').default);
 Vue.component('resultados-test', require('./view/ResultadosTest.vue').default);
+Vue.component('chart-js', require('./components/ChartJS.vue').default);
 // Vue.component('view-test', require('./view/ViewTestBase.vue').default);
 
 /**
