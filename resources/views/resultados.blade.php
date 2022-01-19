@@ -5,6 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <resultados-test
+            :send_email="{{ $send_email }}"
+            :id="{{ $id }}"
             :red="{{ $red }}"
             :blue="{{ $blue }}"
             :yellow="{{ $yellow }}"

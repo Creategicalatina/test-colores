@@ -21,3 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('get-questions', [PerfilPersonalidadController::class, 'index']);
 Route::post('store-questions', [PerfilPersonalidadController::class, 'store']);
+
+Route::post('send-email', [PerfilPersonalidadController::class, 'sendEmail']);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Mail\SendTestResult;
 use App\Models\AnswerTest;
 use App\Models\Characteristic;
 use App\Models\Group;
@@ -10,6 +11,9 @@ use App\Models\Test;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class PerfilPersonalidadController extends Controller
 {
@@ -64,7 +68,7 @@ class PerfilPersonalidadController extends Controller
 
     public function showResultados($id)
     {
-        Test::findOrFail($id);
+        $test = Test::findOrFail($id);
         $answers = Characteristic::selectRaw('count(type) as total, type')->groupBy('type')->whereHas('answerTest', function ($answerTest) use ($id) {
             return $answerTest->where('test_id', $id);
         })->get();
@@ -94,11 +98,54 @@ class PerfilPersonalidadController extends Controller
             $total += $answer->total;
         }
 
-        $red = ($red / $total)*100;
-        $blue = ($blue / $total)*100;
-        $green = ($green / $total)*100;
-        $yellow = ($yellow / $total)*100;
+        $red = ($red / $total) * 100;
+        $blue = ($blue / $total) * 100;
+        $green = ($green / $total) * 100;
+        $yellow = ($yellow / $total) * 100;
 
-        return view('resultados', compact('red', 'blue', 'green', 'yellow'));
+        $send_email = $test->send_email;
+
+        return view('resultados', compact('red', 'blue', 'green', 'yellow', 'id', 'send_email'));
+    }
+
+    public function sendEmail(Request $request)
+    {
+        $id = $request->input('id');
+        $red = $request->input('red');
+        $blue = $request->input('blue');
+        $yellow = $request->input('yellow');
+        $green = $request->input('green');
+        $img = $request->input('img');
+
+        $test = Test::findOrFail($id);
+        $user = User::find($test->user_id);
+
+        @list($type, $file_data) = explode(';', $img);
+        @list(, $file_data) = explode(',', $file_data);
+        $imageName = Str::random() . '.png';
+        $path = '/results/' . $imageName;
+        $finalPath = storage_path('app/public/' . $path);
+        Storage::disk('public')->put($path, base64_decode($file_data));
+
+        try {
+            if (!$test->send_email) {
+                Mail::to($user->email)->send(new SendTestResult(
+                    $user->email,
+                    $user->name,
+                    $finalPath,
+                    $red,
+                    $blue,
+                    $yellow,
+                    $green,
+                ));
+
+                $test->send_email = true;
+                $test->path_img = $path;
+                $test->save();
+            }
+        } catch (\Throwable $th) {
+            return response()->json($th->getMessage(), 501);
+        }
+        return response()->json();
     }
 }

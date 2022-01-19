@@ -2,7 +2,6 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-12 col-md-10">
-
         <rules-test class="rules mb-3"></rules-test>
 
         <div class="card mb-3 formulario">
@@ -44,7 +43,9 @@
               </tbody>
             </table>
             <div class="text-center p-2">
-              <button class="btn btn-primary" @click="storeData">Mostrar Resultados</button>
+              <button class="btn btn-primary" @click="storeData">
+                Mostrar Resultados
+              </button>
             </div>
           </div>
         </div>
@@ -57,7 +58,7 @@
 <script>
 import FrmPersona from "../components/FrmPersona.vue";
 import ItemTest from "../components/ItemTest.vue";
-import RulesTest from '../components/RulesTest.vue';
+import RulesTest from "../components/RulesTest.vue";
 
 export default {
   name: "ViewTest",
@@ -90,12 +91,12 @@ export default {
       Object.assign(this.user, user);
       setTimeout(() => {
         this.scroll();
-      }, 300)
+      }, 300);
     },
-    scroll(){
+    scroll() {
       document
-          .querySelector(".col-info.col-red")
-          .scrollIntoView({ block: "center", behavior: "smooth" });
+        .querySelector(".col-info.col-red")
+        .scrollIntoView({ block: "center", behavior: "smooth" });
     },
     storeData() {
       if (this.hasErrorsTest) {
@@ -186,5 +187,4 @@ export default {
   margin: auto;
   max-width: 50rem;
 }
-
 </style>

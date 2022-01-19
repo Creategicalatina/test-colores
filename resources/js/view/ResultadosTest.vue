@@ -25,6 +25,7 @@
         <chart-js :config="getConfigChart"></chart-js>
       </div>
     </div>
+    <div :class="{ 'd-none': img !== false }" class="block"></div>
   </div>
 </template>
 
@@ -33,6 +34,13 @@
 export default {
   name: "ResultadosTest",
   props: {
+    send_email: {
+      require: true,
+    },
+    id: {
+      type: Number,
+      require: true,
+    },
     red: {
       type: Number,
       require: true,
@@ -91,6 +99,52 @@ export default {
       };
     },
   },
+  data() {
+    return {
+      img: false,
+    };
+  },
+  mounted() {
+    this.img = Boolean(this.send_email);
+    if (!this.img) {
+      this.getImg();
+    }
+  },
+  methods: {
+    getImg(previo = null) {
+      const canvas = document.querySelector("canvas");
+      const img = canvas.toDataURL();
+      if (previo !== img) {
+        setTimeout(() => {
+          this.getImg(img);
+        }, 500);
+      } else {
+        this.img = img;
+        this.sendEmail();
+      }
+    },
+    sendEmail() {
+      const data = {
+        id: this.id,
+        red: this.red,
+        blue: this.blue,
+        yellow: this.yellow,
+        green: this.green,
+        img: this.img,
+      };
+      this.axios
+        .post("/api/send-email", data)
+        .then(() => {})
+        .catch((err) => {
+          this.$toast.error({
+            message: "No se ha podido enviar el correo",
+            showDuration: 1000,
+            hideDuration: 8000,
+          });
+          console.log(err);
+        });
+    },
+  },
 };
 </script>
 
@@ -114,5 +168,13 @@ export default {
   border-left: 2px solid #dee2e6;
   border-right: 2px solid #dee2e6;
   border-bottom: 2px solid #dee2e6;
+}
+
+.block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
 }
 </style>
