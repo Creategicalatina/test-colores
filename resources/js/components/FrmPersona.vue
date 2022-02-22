@@ -16,7 +16,7 @@
       <div class="invalid-feedback">{{ errorName }}</div>
     </div>
     <div class="col-md-6">
-      <label for="email" class="form-label">Email</label>
+      <label for="email" class="form-label">Correo electrónico</label>
       <input
         type="text"
         class="form-control"

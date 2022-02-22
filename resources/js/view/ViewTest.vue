@@ -91,7 +91,7 @@ export default {
       Object.assign(this.user, user);
       setTimeout(() => {
         this.scroll();
-      }, 300);
+      }, 500);
     },
     scroll() {
       document
