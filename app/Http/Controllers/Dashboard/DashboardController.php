@@ -16,7 +16,7 @@ class DashboardController extends Controller
 
     public function getUsers()
     {
-        $users = User::whereNotIn('Usuario')->with('test')->get();
+        $users = User::role('Usuario')->with('test')->get();
         return response()->json($users);
 //        return response()->json([$users, $test]);
     }
