@@ -12,9 +12,15 @@ import Vue from 'vue';
 
 require('./bootstrap');
 
+import SmartTable from 'vuejs-smart-table'
+Vue.use(SmartTable)
 
 Chart.register(ChartDataLabels, ...registerables)
 Vue.prototype.$chart = Chart;
+
+import VueDayjs from 'vue-dayjs-plugin'
+Vue.use(VueDayjs)
+import 'dayjs/locale/es';
 
 const toastrConfigs = {
     position: 'top right',
@@ -25,6 +31,10 @@ Vue.use(CxltToastr, toastrConfigs)
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 Vue.prototype.axios = axios;
 
+import Vuesax from 'vuesax'
+import 'vuesax/dist/vuesax.css'
+import 'material-icons/iconfont/material-icons.css';
+Vue.use(Vuesax)
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -35,6 +45,8 @@ Vue.prototype.axios = axios;
 Vue.component('view-test', require('./view/ViewTest.vue').default);
 Vue.component('resultados-test', require('./view/ResultadosTest.vue').default);
 Vue.component('chart-js', require('./components/ChartJS.vue').default);
+
+Vue.component('dashboard-page', require('./dashboard/Dashboard.vue').default);
 // Vue.component('view-test', require('./view/ViewTestBase.vue').default);
 
 /**

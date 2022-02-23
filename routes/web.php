@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\PerfilPersonalidadController;
+use \App\Http\Controllers\Dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/resultados/{id}', [PerfilPersonalidadController::class, 'showResultados'])->name('test.results');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('index.dashboard')->middleware('auth');
 
 
 Route::get('temporal', function () {

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\PerfilPersonalidadController;
+use \App\Http\Controllers\Dashboard\DashboardController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,6 @@ Route::get('get-questions', [PerfilPersonalidadController::class, 'index']);
 Route::post('store-questions', [PerfilPersonalidadController::class, 'store']);
 
 Route::post('send-email', [PerfilPersonalidadController::class, 'sendEmail']);
+
+Route::get('get-users', [DashboardController::class, 'getUsers'])->name('api.get.users');
+Route::get('get-user/{id}', [DashboardController::class, 'getUser'])->name('api.get.user');

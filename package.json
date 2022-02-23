@@ -27,6 +27,12 @@
     "dependencies": {
         "chart.js": "^3.6.0",
         "chartjs-plugin-datalabels": "^2.0.0",
-        "cxlt-vue2-toastr": "^1.1.1"
+        "cxlt-vue2-toastr": "^1.1.1",
+        "material-icons": "^1.10.7",
+        "moment": "^2.29.1",
+        "vue-dayjs": "^1.0.2",
+        "vue-dayjs-plugin": "^1.0.0",
+        "vuejs-smart-table": "0.0.8",
+        "vuesax": "^3.12.2"
     }
 }

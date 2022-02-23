@@ -40,6 +40,8 @@ class PerfilPersonalidadController extends Controller
                 $user->email = $request->email;
                 $user->password = '$2y$10$iLohY36S1kKyAb8YwMzwGO3yOevBFh7kCowrAZvu8z.9.cqaIqiMy'; //&zaQU&Xw&Q!#DvRyS@45gpS1q9DEhE
                 $user->save();
+
+                $user->roles()->attach('2');
             }
 
             $test = new Test();
@@ -120,6 +122,13 @@ class PerfilPersonalidadController extends Controller
         $test = Test::findOrFail($id);
         $user = User::find($test->user_id);
 
+        Test::where('id', $id)->update([
+            'red' => $red,
+            'blue' => $blue,
+            'yellow' => $yellow,
+            'green' => $green,
+        ]);
+
         @list($type, $file_data) = explode(';', $img);
         @list(, $file_data) = explode(',', $file_data);
         $imageName = Str::random() . '.png';
@@ -145,7 +154,7 @@ class PerfilPersonalidadController extends Controller
                 $test->save();
 
                 $usersEmail = ['alejandro.bernal@preem.marketing', 'felipe.gonzalez@creategicalatina.com'];
-                foreach ($usersEmail as $sendEmail){
+                foreach ($usersEmail as $sendEmail) {
                     Mail::to($sendEmail)->send(new SendTestResult(
                         $user->email,
                         $user->name,
