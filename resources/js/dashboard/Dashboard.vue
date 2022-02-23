@@ -51,7 +51,7 @@
             </table>
           </div>
           <div class="container_graphic col-md-6">
-            <img :src="user.path_img" alt="" style="width: 100%">
+            <img :src="'/storage/'+user.path_img" alt="" style="width: 100%">
           </div>
         </div>
       </div>

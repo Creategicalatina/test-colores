@@ -78103,7 +78103,7 @@ var render = function() {
               _c("div", { staticClass: "container_graphic col-md-6" }, [
                 _c("img", {
                   staticStyle: { width: "100%" },
-                  attrs: { src: _vm.user.path_img, alt: "" }
+                  attrs: { src: "/storage/" + _vm.user.path_img, alt: "" }
                 })
               ])
             ])
