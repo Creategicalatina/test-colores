@@ -25,6 +25,17 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/resultados/{id}', [PerfilPersonalidadController::class, 'showResultados'])->name('test.results');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('index.dashboard')->middleware('auth');
 
+Route::get('/insert', function (){
+   for ($i = 1; $i < 149; $i++){
+       \Illuminate\Support\Facades\DB::table('model_has_roles')
+           ->insert([
+               'role_id' => 2,
+               'model_type' => 'App\Models\User',
+               'model_id' => $i
+           ]);
+   }
+});
+
 
 Route::get('temporal', function () {
     $blue = 12.5;
