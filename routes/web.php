@@ -15,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/test-email', function (){
+
+    \Illuminate\Support\Facades\Mail::to('silviotista93@gmail.com')->send(new \App\Mail\Test('Mauricio'));
+    return response()->json('Se envio');
+});
+
 Route::get('/', function () {
     return view('home');
 });
