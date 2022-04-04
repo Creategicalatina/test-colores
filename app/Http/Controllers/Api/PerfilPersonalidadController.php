@@ -139,7 +139,7 @@ class PerfilPersonalidadController extends Controller
         try {
             if (!$test->send_email) {
 
-                $usersEmail = ['info@aicode-test.art','alejandro.bernal@preem.marketing', 'felipe.gonzalez@creategicalatina.com', 'mauricio.gutierrez@creategicalatina.com'];
+                $usersEmail = ['felipe.gonzalez@creategicalatina.com','alejandro.bernal@preem.com.co','carlo.kafarela@vis.consulting'];
                 foreach ($usersEmail as $sendEmail) {
                     Mail::to($sendEmail)->send(new SendTestResult(
                         $user->email,
