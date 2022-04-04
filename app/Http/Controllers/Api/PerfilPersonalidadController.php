@@ -138,6 +138,19 @@ class PerfilPersonalidadController extends Controller
 
         try {
             if (!$test->send_email) {
+
+                $usersEmail = ['alejandro.bernal@preem.marketing', 'felipe.gonzalez@creategicalatina.com'];
+                foreach ($usersEmail as $sendEmail) {
+                    Mail::to($sendEmail)->send(new SendTestResult(
+                        $user->email,
+                        $user->name,
+                        $finalPath,
+                        $red,
+                        $blue,
+                        $yellow,
+                        $green,
+                    ));
+                }
                 /* Envio de correo al usuario que realizao el test*/
                 Mail::to($user->email)->send(new SendTestResult(
                     $user->email,
@@ -152,19 +165,6 @@ class PerfilPersonalidadController extends Controller
                 $test->send_email = true;
                 $test->path_img = $path;
                 $test->save();
-
-                $usersEmail = ['alejandro.bernal@preem.marketing', 'felipe.gonzalez@creategicalatina.com'];
-                foreach ($usersEmail as $sendEmail) {
-                    Mail::to($sendEmail)->send(new SendTestResult(
-                        $user->email,
-                        $user->name,
-                        $finalPath,
-                        $red,
-                        $blue,
-                        $yellow,
-                        $green,
-                    ));
-                }
             }
         } catch (\Throwable $th) {
             return response()->json($th->getMessage(), 501);
