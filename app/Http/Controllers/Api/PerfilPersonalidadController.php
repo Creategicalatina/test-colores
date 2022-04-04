@@ -139,18 +139,18 @@ class PerfilPersonalidadController extends Controller
         try {
             if (!$test->send_email) {
 
-                $usersEmail = ['info@aicode-test.art','alejandro.bernal@preem.marketing', 'felipe.gonzalez@creategicalatina.com', 'mauricio.gutierrez@creategicalatina.com'];
-                foreach ($usersEmail as $sendEmail) {
-                    Mail::to($sendEmail)->send(new SendTestResult(
-                        $user->email,
-                        $user->name,
-                        $finalPath,
-                        $red,
-                        $blue,
-                        $yellow,
-                        $green,
-                    ));
-                }
+//                $usersEmail = ['info@aicode-test.art','alejandro.bernal@preem.marketing', 'felipe.gonzalez@creategicalatina.com', 'mauricio.gutierrez@creategicalatina.com'];
+//                foreach ($usersEmail as $sendEmail) {
+//                    Mail::to($sendEmail)->send(new SendTestResult(
+//                        $user->email,
+//                        $user->name,
+//                        $finalPath,
+//                        $red,
+//                        $blue,
+//                        $yellow,
+//                        $green,
+//                    ));
+//                }
                 /* Envio de correo al usuario que realizao el test*/
                 Mail::to($user->email)->send(new SendTestResult(
                     $user->email,
