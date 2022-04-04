@@ -43,6 +43,8 @@ return [
             'password' => env('MAIL_PASSWORD', 'mq4Thk0YFfi0'),
             'timeout' => null,
             'auth_mode' => null,
+            'address' => env('MAIL_ZOHO_FROM_ADDRESS', 'info@aicode-test.art'),
+            'name' => env('MAIL_ZOHO_FROM_NAME', 'Test Coloress'),
         ],
 
         'ses' => [
