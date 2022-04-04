@@ -36,17 +36,13 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'smtp.zoho.com'),
+            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
             'port' => env('MAIL_PORT', 587),
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => env('MAIL_USERNAME', 'info@aicode-test.art'),
-            'password' => env('MAIL_PASSWORD', 'mq4Thk0YFfi0'),
+            'username' => env('MAIL_USERNAME'),
+            'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
             'auth_mode' => null,
-            'from' => [
-                'address' => env('MAIL_ZOHO_FROM_ADDRESS', 'info@aicode-test.art'),
-                'name' => env('MAIL_ZOHO_FROM_NAME', 'Test Coloress'),
-            ],
         ],
 
         'ses' => [
