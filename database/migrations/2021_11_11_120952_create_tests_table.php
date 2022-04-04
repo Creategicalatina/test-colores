@@ -17,6 +17,10 @@ class CreateTestsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->double('red')->nullable();
+            $table->double('blue')->nullable();
+            $table->double('yellow')->nullable();
+            $table->double('green')->nullable();
             $table->timestamps();
         });
     }
